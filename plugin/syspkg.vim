@@ -1,33 +1,35 @@
+let s:file_path=expand('<sfile>:p:h')
+
 function! syspkg#install(...) abort
-  return system("./piu install " . join(a:000, " "))
+  return system(s:file_path . "/./piu install " . join(a:000, " "))
 endfunction
 
 function! syspkg#remove(...) abort
-  return system("./piu remove " . join(a:000, " "))
+  return system(s:file_path . "/./piu remove " . join(a:000, " "))
 endfunction
 
 function! syspkg#purge(...) abort
-  return system("./piu purge " . join(a:000, " "))
+  return system(s:file_path . "/./piu purge " . join(a:000, " "))
 endfunction
 
 function! syspkg#search(...) abort
-  return system("./piu search " . join(a:000, " "))
+  return system(s:file_path . "/./piu search " . join(a:000, " "))
 endfunction
 
 function! syspkg#manual(...) abort
-  return system("./piu manual " . join(a:000, " "))
+  return system(s:file_path . "/./piu manual " . join(a:000, " "))
 endfunction
 
 function! syspkg#upgrade(...) abort
-  return system("./piu update " . join(a:000, " "))
+  return system(s:file_path . "/./piu update " . join(a:000, " "))
 endfunction
 
 function! syspkg#update(...) abort
-  return system("./piu cache " . join(a:000, " "))
+  return system(s:file_path . "/./piu cache " . join(a:000, " "))
 endfunction
 
 function! syspkg#list() abort
-  return split(system("./piu list"), "\n")
+  return split(system(s:file_path . "/./piu list"), "\n")
 endfunction
 
 
